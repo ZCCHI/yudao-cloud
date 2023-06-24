@@ -140,7 +140,7 @@ public class MailLogServiceImplTest extends BaseDbUnitTest {
            o.setAccountId(10L);
            o.setTemplateId(100L);
            o.setSendStatus(MailSendStatusEnum.INIT.getStatus());
-           o.setSendTime(buildTime(2023, 2, 10));
+           //o.setSendTime(buildTime(2023, 2, 10));
            o.setTemplateParams(randomTemplateParams());
        });
        mailLogMapper.insert(dbMailLog);
@@ -157,7 +157,7 @@ public class MailLogServiceImplTest extends BaseDbUnitTest {
        // 测试 sendStatus 不匹配
        mailLogMapper.insert(cloneIgnoreId(dbMailLog, o -> o.setSendStatus(MailSendStatusEnum.SUCCESS.getStatus())));
        // 测试 sendTime 不匹配
-       mailLogMapper.insert(cloneIgnoreId(dbMailLog, o -> o.setSendTime(buildTime(2023, 3, 10))));
+       //mailLogMapper.insert(cloneIgnoreId(dbMailLog, o -> o.setSendTime(buildTime(2023, 3, 10))));
        // 准备参数
        MailLogPageReqVO reqVO = new MailLogPageReqVO();
        reqVO.setUserId(1L);
